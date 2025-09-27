@@ -14,6 +14,8 @@ jobs:
 
       - name: Render all .puml to .png
         uses: grassedge/generate-plantuml-action@v1.5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit rendered diagrams
         run: |

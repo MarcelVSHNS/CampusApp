@@ -1,38 +1,33 @@
-name: Render Structurizr Diagrams
+name: Generate C4 Diagrams
 
 on:
   push:
-    paths:
-      - 'docs/architecture/**'
-  workflow_dispatch: # optional, für manuelles Auslösen
+    branches: [ main ]
 
 jobs:
-  render:
+  structurizr:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Convert DSL to JSON
-        run: |
-          wget https://github.com/structurizr/cli/releases/download/v1.33.0/structurizr-cli.zip
-          unzip structurizr-cli.zip -d structurizr-cli
-          java -jar structurizr-cli/structurizr-cli/structurizr-cli.jar export \
-            -workspace docs/architecture/campus-app.dsl \
-            -format json \
-            -output docs/architecture/workspace.json
+      # 1. DSL -> JSON
+      - name: Export Structurizr workspace (JSON)
+        uses: gilbertotcc/structurizr-action@v1
+        with:
+          args: 'export -workspace docs/architecture/campus-app.dsl -format json -output docs/architecture'
 
-      - name: Structurizr Renderer
+      # 2. JSON -> PNG
+      - name: Render PNG diagrams
         uses: pleimann/structurizr@v1
         with:
           workspace: docs/architecture/workspace.json
-          output-dir: docs/diagrams
-          version: latest
+          output-dir: docs/architecture/diagrams
 
-      - name: Commit rendered diagrams
+      # 3. Commit results
+      - name: Commit generated diagrams
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/diagrams
-          git commit -m "Automated: update rendered Structurizr diagrams" || echo "No changes to commit"
+          git config --global user.name 'github-actions'
+          git config --global user.email 'actions@github.com'
+          git add docs/architecture/diagrams
+          git commit -m "Update diagrams" || echo "No changes"
           git push

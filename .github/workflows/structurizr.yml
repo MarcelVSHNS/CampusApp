@@ -15,9 +15,9 @@ jobs:
 
       - name: Convert DSL to JSON
         run: |
-          curl -L -o structurizr-cli.zip https://github.com/structurizr/cli/releases/download/v1.33.0/structurizr-cli.zip
+          wget https://github.com/structurizr/cli/releases/download/v1.33.0/structurizr-cli.zip
           unzip structurizr-cli.zip -d structurizr-cli
-          java -jar structurizr-cli/structurizr-cli.jar export \
+          java -jar structurizr-cli/structurizr-cli/structurizr-cli.jar export \
             -workspace docs/architecture/campus-app.dsl \
             -format json \
             -output docs/architecture/workspace.json

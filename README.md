@@ -22,10 +22,9 @@ So unterstützt die App Studierende bei der Planung ihres Studien- und Freizeita
 
 | Stakeholder | Beschreibung | Ziel / Interesse |
 |--------------|--------------|------------------|
-| 🧑‍🎓 **Studierende** | Hauptnutzer:innen der App | Veranstaltungen finden, merken, planen |
+| 🧑‍🎓 **Studierende** | Hauptnutzende der App | Veranstaltungen finden, merken, planen |
 | 🧑‍🏫 **Dozierende / Organisationen** | Erstellen von Events, Bewerben von Angeboten | Sichtbarkeit ihrer Veranstaltungen |
 | 🧑‍💻 **Entwicklungsteam** | Studentisches Projektteam | Umsetzung eines durchgängigen Softwareprojekts |
-| 🧑‍🎓 **Modulverantwortliche / Lehrende** | Betreuende Dozent:innen | Evaluation der Softwareentwicklungskompetenz |
 
 ### c. Personas
 

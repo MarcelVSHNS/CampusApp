@@ -1,7 +1,25 @@
- - name: Structurizr CLI
-  # You may pin to the exact commit or the version.
-  # uses: gilbertotcc/structurizr-action@ec4b973d57fb0c4555feec4df1706613dcf1a4c3
-  uses: gilbertotcc/structurizr-action@latest
-  with:
-    # Arguments for Structurizr CLI
-    args: 'export -workspace docs/architecture/campus-app.dsl -format png -output docs/architecture/diagrams' # default is 
+name: Generate C4 Diagrams
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  structurizr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Structurizr CLI
+        uses: gilbertotcc/structurizr-action@latest
+        with:
+          args: 'export -workspace docs/architecture/campus-app.dsl -format png -output docs/architecture/diagrams'
+
+      - name: Commit generated diagrams
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'actions@github.com'
+          git add docs/architecture/diagrams
+          git commit -m "Update diagrams" || echo "No changes"
+          git push

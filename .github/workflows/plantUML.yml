@@ -1,9 +1,10 @@
-name: Render C4 via PlantUML
+name: Render PlantUML Diagrams
 
 on:
   push:
     paths:
-      - 'docs/architecture/**'
+      - 'docs/architecture/**/*.puml'
+  workflow_dispatch:
 
 jobs:
   render:
@@ -11,26 +12,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Structurizr CLI
-        run: |
-          curl -L -o structurizr-cli.jar https://github.com/structurizr/cli/releases/download/v1.33.0/structurizr-cli.jar
-
-      - name: Export to PlantUML
-        run: |
-          java -jar structurizr-cli.jar export \
-            -workspace docs/architecture/campus-app.dsl \
-            -format plantuml \
-            -output docs/diagrams/plantuml
-
-      - name: Render PNGs with PlantUML
+      - name: Render all .puml to .png
         uses: cloudbees/plantuml-github-action@v1.0
         with:
-          args: -tpng docs/diagrams/plantuml/*.puml
+          args: -tpng docs/architecture/**/*.puml
 
       - name: Commit rendered diagrams
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add docs/diagrams
+          git add docs/architecture/**/*.png
           git commit -m "update rendered diagrams" || echo "no changes"
           git push

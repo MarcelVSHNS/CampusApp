@@ -13,16 +13,20 @@ jobs:
 
       - name: Download latest Structurizr CLI
         run: |
-          curl -s https://api.github.com/repos/structurizr/cli/releases/latest \
+          # Lade URL des neuesten .tgz Assets aus dem GitHub Release JSON
+          URL=$(curl -s https://api.github.com/repos/structurizr/cli/releases/latest \
             | grep "browser_download_url.*tgz" \
-            | cut -d '"' -f 4 \
-            | wget -i -
+            | cut -d '"' -f 4)
+          echo "Downloading: $URL"
+          curl -L $URL -o structurizr-cli.tgz
+
           mkdir structurizr-cli
-          tar -xvzf structurizr-cli-*.tgz -C structurizr-cli
+          tar -xvzf structurizr-cli.tgz -C structurizr-cli
 
       - name: Export diagrams
         run: |
           JAR=$(find structurizr-cli -name "structurizr-cli-*.jar")
+          echo "Using JAR: $JAR"
           java -jar $JAR \
             export -workspace docs/architecture/campus-app.dsl \
             -format plantuml \

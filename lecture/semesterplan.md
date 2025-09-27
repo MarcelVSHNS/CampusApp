@@ -29,12 +29,13 @@
 - Anforderungen: funktional & nicht-funktional
   - Funktionale Anforderungen: Beschreiben **was** das System tun soll (z. B. Funktionen, Aktionen, Prozesse).  
   - Nicht-funktionale Anforderungen: Beschreiben **wie gut** das System arbeitet (z. B. Qualität, Sicherheit, Performance, Usability).  
-- Stakeholderanalyse & Personas  
+- Stakeholderanalyse & Personas
 - User Stories & Akzeptanzkriterien (INVEST-Regel)
   - **Form**: Als [Rolle] möchte ich [Ziel/Funktion], um [Nutzen] zu erreichen.
-  - **MoSCoW-Priorisierung**: 'Must', 'Should', 'Could', 'Won’t'  
-  - **INVEST-Kriterien**: Independent, Negotiable, Valuable, Estimable, Small, Testable  
-  - **Akzeptanzkriterien**: Given – When – Then
+  - **MoSCoW-Priorisierung**: `Must`, `Should`, `Could`, `Won’t`  
+  - **INVEST-Kriterien**: `Independent`, `Negotiable`, `Valuable`, `Estimable`, `Small`, `Testable`  
+  - **Akzeptanzkriterien**: `Given` – `When` – `Then`
+- MVP (Minimum Viable Product) auf Basis der `Must` und `Won’t`
 
 #### Praxis
 - Projektidee & Funktionsumfang definieren  

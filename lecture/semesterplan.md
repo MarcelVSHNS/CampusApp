@@ -80,10 +80,17 @@
 ### **3. Analyse**
 
 #### Theorie
-- UML-Grundlagen & Notation  
-- **Verhaltenssicht:** Use Case Diagramm, Aktivitätsdiagramm  
+- UML-Grundlagen & Notation (UML 2.5 - Das umfassende Handbuch, von Christoph Kecher; Ralf Hoffmann-Elbern; Torsten T. Will)  
+- **Verhaltenssicht:** Use Case Diagramm, Aktivitätsdiagramm
+  - Zeigt, **wer** (Akteure) **was** (Use Cases) mit dem System tut; verdeutlicht den funktionalen Umfang.
+  - Beschreibt **Abläufe und Entscheidungen** innerhalb eines Use Case; visualisiert Workflows und Kontrollflüsse.
 - **Struktursicht:** Domainmodell (Klassendiagramm)
+  - Zeigt **zentrale Konzepte, Objekte und Beziehungen** der Fachdomäne; bildet die Grundlage für Daten- und Klassenstrukturen.
 - Zusammenhang zwischen User Stories & UML
+  - User Stories liefern den **Inhalt** der Modelle:  
+    → Use Cases aus User Story-Zielen  
+    → Aktivitätsdiagramme aus Abläufen  
+    → Domainmodell aus Substantiven und Beziehungen.
 
 #### Praxis
 - Aus User Stories Use Cases ableiten  
@@ -92,7 +99,8 @@
 - Diagramme als `.puml` in `docs/02_analysis` ablegen
 
 #### Projektziel
-> UML-Diagramme fürs Projekt erzeugen
+> UML-Diagramme fürs Projekt mit PlantUML oder https://app.diagrams.net/ (draw.io) erzeugen
+> Jira/ Confluence oder Github only einrichten
 
 #### Deliverables
 - `use_case.puml`, `activity_xxx.puml`, `domain_model.puml`  

@@ -23,15 +23,20 @@ jobs:
           mkdir structurizr-cli
           unzip structurizr-cli.zip -d structurizr-cli
 
-      - name: Debug list extracted files
-        run: |
-          echo "📂 Inhalt von structurizr-cli nach unzip:"
-          ls -R structurizr-cli
-
       - name: Export diagrams as PNG
         run: |
-          # JAR robust finden
-          JAR=$(find structurizr-cli -maxdepth 3 -type f -name "structurizr-cli-*.jar" | head -n 1)
+          JAR="structurizr-cli/lib/structurizr-cli.jar"
           echo "Using JAR: $JAR"
 
-          if [ -z "$JAR" ]; then
+          java -jar "$JAR" \
+            export -workspace docs/architecture/campus-app.dsl \
+            -format png \
+            -output docs/architecture/diagrams
+
+      - name: Commit generated diagrams
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'actions@github.com'
+          git add docs/architecture/diagrams
+          git commit -m "Update diagrams" || echo "No changes"
+          git push

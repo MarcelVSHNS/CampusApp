@@ -1,7 +1,7 @@
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
 
-Person(user, "User")
+Person(user, "User2")
 System(system, "Campus App", "Web and mobile app")
 SystemDb(db, "Database", "Stores data")
 

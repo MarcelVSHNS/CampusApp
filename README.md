@@ -1,8 +1,6 @@
-# 🎓 CampusEvents – Deine smarte Veranstaltungs-App für den Campus
+# 🎓 CampusEvents – Deine smarte App für den Campus
 
 > **Hinweis:** Dieses Projekt ist Teil der Lehrveranstaltung *Software Engineering*  
-> Ziel ist es, alle Phasen des Softwareentwicklungsprozesses anhand eines realistischen Use-Cases praktisch nachzuvollziehen.  
-> Dieses Repository dokumentiert und implementiert das Projekt **CampusEvents**, eine modulare Campus-App mit LLM-Unterstützung.
 
 ---
 

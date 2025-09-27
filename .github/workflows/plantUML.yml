@@ -13,9 +13,12 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Render all .puml to .png
-        uses: cloudbees/plantuml-github-action@v1.0
-        with:
-          args: -tpng docs/architecture/**/*.puml
+        uses: grassedge/generate-plantuml-action@v1.5
+          with:
+            # path to directory which generated svg is stored
+            path: # optional, default is .
+            # the commit message when committing generated images
+            message: # optional, default is Render PlantUML files
 
       - name: Commit rendered diagrams
         run: |

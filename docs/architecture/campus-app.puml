@@ -1,0 +1,11 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+Person(user, "User")
+System(system, "Campus App", "Web and mobile app")
+SystemDb(db, "Database", "Stores data")
+
+Rel(user, system, "Uses")
+Rel(system, db, "Reads/Writes data")
+
+@enduml

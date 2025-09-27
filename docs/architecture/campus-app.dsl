@@ -9,7 +9,7 @@ workspace {
             description "Eine App für Studierende mit Kursplan, Mensa, News & Chatbot."
         }
 
-        user -> system "Nutzt"
+        user -> system "Benutzt"
     }
 
     views {

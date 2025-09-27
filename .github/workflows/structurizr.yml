@@ -2,23 +2,37 @@ name: Render Structurizr Diagrams
 
 on:
   push:
-    branches: [ main ]
     paths:
-      - "docs/architecture/**"
-  workflow_dispatch: # optional: manuelles Triggern
+      - 'docs/architecture/**'
+  workflow_dispatch: # optional, für manuelles Auslösen
 
 jobs:
   render:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Render Structurizr diagrams
-        uses: structurizr/structurizr-render-action@v1
+      - name: Convert DSL to JSON
+        run: |
+          curl -L -o structurizr-cli.zip https://github.com/structurizr/cli/releases/download/v1.33.0/structurizr-cli.zip
+          unzip structurizr-cli.zip -d structurizr-cli
+          java -jar structurizr-cli/structurizr-cli.jar export \
+            -workspace docs/architecture/campus-app.dsl \
+            -format json \
+            -output docs/architecture/workspace.json
+
+      - name: Structurizr Renderer
+        uses: pleimann/structurizr@v1
         with:
-          structurizr_dsl_path: docs/architecture/campus-app.dsl
-          output_path: docs/architecture/diagrams
-          # optional:
-          output_formats: "png,svg" # Standard ist png
+          workspace: docs/architecture/workspace.json
+          output-dir: docs/diagrams
+          version: latest
+
+      - name: Commit rendered diagrams
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/diagrams
+          git commit -m "Automated: update rendered Structurizr diagrams" || echo "No changes to commit"
+          git push

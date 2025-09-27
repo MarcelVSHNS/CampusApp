@@ -1,7 +1,7 @@
 workspace {
 
     model {
-        user = person "Studierende" {
+        user = person "Studierende:innen" {
             description "Ein Studierender, der die Campus-App benutzt oder möchte. Test"
         }
 

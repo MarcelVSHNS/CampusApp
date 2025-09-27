@@ -11,15 +11,22 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run Structurizr CLI
-        uses: structurizr/cli-action@v1
-        with:
-          args: export -workspace docs/architecture/campus-app.dsl -format plantuml -output docs/architecture/diagrams
+      - name: Download Structurizr CLI
+        run: |
+          curl -L https://github.com/structurizr/cli/releases/download/v2024.03.21/structurizr-cli-2024.03.21.zip -o structurizr-cli.zip
+          unzip structurizr-cli.zip -d structurizr-cli
+
+      - name: Export diagrams
+        run: |
+          java -jar structurizr-cli/structurizr-cli-2024.03.21.jar \
+            export -workspace docs/architecture/campus-app.dsl \
+            -format plantuml \
+            -output docs/architecture/diagrams
 
       - name: Commit generated diagrams
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'actions@github.com'
           git add docs/architecture/diagrams
-          git commit -m "Update diagrams"
+          git commit -m "Update diagrams" || echo "No changes"
           git push

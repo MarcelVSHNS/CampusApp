@@ -1,25 +1,7 @@
-name: Generate C4 Diagrams
-
-on:
-  push:
-    paths:
-      - 'docs/architecture/**/*.dsl'
-
-jobs:
-  structurizr:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Export Structurizr diagrams (PNG)
-        uses: gilbertotcc/structurizr-action@v1
-        with:
-          args: 'export -workspace docs/architecture/campus-app.dsl -format png -output docs/architecture/diagrams'
-
-      - name: Commit generated diagrams
-        run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'actions@github.com'
-          git add docs/architecture/diagrams
-          git commit -m "Update diagrams" || echo "No changes"
-          git push
+ - name: Structurizr CLI
+  # You may pin to the exact commit or the version.
+  # uses: gilbertotcc/structurizr-action@ec4b973d57fb0c4555feec4df1706613dcf1a4c3
+  uses: gilbertotcc/structurizr-action@latest
+  with:
+    # Arguments for Structurizr CLI
+    args: 'export -workspace docs/architecture/campus-app.dsl -format png -output docs/architecture/diagrams' # default is 

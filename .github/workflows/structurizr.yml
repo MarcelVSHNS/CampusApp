@@ -8,14 +8,22 @@ jobs:
   structurizr:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Structurizr CLI
-        uses: gilbertotcc/structurizr-action@latest
+      # 1. DSL -> JSON
+      - name: Export Structurizr workspace (JSON)
+        uses: gilbertotcc/structurizr-action@v1
         with:
-          args: 'export -workspace docs/architecture/campus-app.dsl -format png -output docs/architecture/diagrams'
+          args: 'export -workspace docs/architecture/campus-app.dsl -format json -output docs/architecture'
 
+      # 2. JSON -> PNG
+      - name: Render PNG diagrams
+        uses: pleimann/structurizr@v1
+        with:
+          workspace: docs/architecture/workspace.json
+          output-dir: docs/architecture/diagrams
+
+      # 3. Commit results
       - name: Commit generated diagrams
         run: |
           git config --global user.name 'github-actions'

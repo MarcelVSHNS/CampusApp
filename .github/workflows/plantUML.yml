@@ -1,0 +1,36 @@
+name: Render C4 via PlantUML
+
+on:
+  push:
+    paths:
+      - 'docs/architecture/**'
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Structurizr CLI
+        run: |
+          curl -L -o structurizr-cli.jar https://github.com/structurizr/cli/releases/download/v1.33.0/structurizr-cli.jar
+
+      - name: Export to PlantUML
+        run: |
+          java -jar structurizr-cli.jar export \
+            -workspace docs/architecture/campus-app.dsl \
+            -format plantuml \
+            -output docs/diagrams/plantuml
+
+      - name: Render PNGs with PlantUML
+        uses: cloudbees/plantuml-github-action@v1.0
+        with:
+          args: -tpng docs/diagrams/plantuml/*.puml
+
+      - name: Commit rendered diagrams
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add docs/diagrams
+          git commit -m "update rendered diagrams" || echo "no changes"
+          git push

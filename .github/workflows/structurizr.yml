@@ -11,27 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Download latest Structurizr CLI
-        run: |
-          # URL des neuesten .zip Assets aus dem Release holen
-          URL=$(curl -s https://api.github.com/repos/structurizr/cli/releases/latest \
-            | grep "browser_download_url.*zip" \
-            | cut -d '"' -f 4)
-          echo "Downloading: $URL"
-          curl -L $URL -o structurizr-cli.zip
-
-          mkdir structurizr-cli
-          unzip structurizr-cli.zip -d structurizr-cli
-
-      - name: Export diagrams as PNG
-        run: |
-          JAR="structurizr-cli/lib/structurizr-cli.jar"
-          echo "Using JAR: $JAR"
-
-          java -jar "$JAR" \
-            export -workspace docs/architecture/campus-app.dsl \
-            -format png \
-            -output docs/architecture/diagrams
+      - name: Export Structurizr diagrams (PNG)
+        uses: gilbertotcc/structurizr-action@v1
+        with:
+          args: 'export -workspace docs/architecture/campus-app.dsl -format png -output docs/architecture/diagrams'
 
       - name: Commit generated diagrams
         run: |

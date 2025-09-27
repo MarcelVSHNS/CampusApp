@@ -6,7 +6,7 @@ workspace {
         }
 
         system = softwareSystem "Campus-App" {
-            description "Eine App für Studierende mit Kursplan, Mensa & News."
+            description "Eine App für Studierende mit Kursplan, Mensa, News & Chatbot."
         }
 
         user -> system "Nutzt"

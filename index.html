@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Campus Widget App for DHBW Stuttgart.">
+  <meta name="keywords" content="GeoGuesser, DHBW, Campus, PublicTransport">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus App STG-TINF24B</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./src/static/css/bulma.min.css">
+  <link rel="stylesheet" href="./src/static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./src/static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./src/static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./src/static/css/index.css">
+  <link rel="icon" href="./src/static/images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./src/static/js/fontawesome.all.min.js"></script>
+  <script src="./src/static/js/bulma-carousel.min.js"></script>
+  <script src="./src/static/js/bulma-slider.min.js"></script>
+  <script src="./src/static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="http://vsv-research.volkmann-webservices.de//">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Projects
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com/CoopScenes/BlurScene">
+            BlurScene
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">The DHBW Stuttgart CampusApp</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/MarcelVSHNS/CampusApp">STG-TINF24B</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Übersicht</h2>
+        <div class="content has-text-centered">
+          <img src="./src/imgs/title.png" alt="Datasets">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Dies ist die gemeinsame Webseite des Kurses TINF24B aus dem Wintersemester 2025/26 im Rahmen der Vorlesung
+            Software Engineering 1. Im Verlauf des Semesters haben die Studierenden eigene Webanwendungen mit Campus-Bezug
+            konzipiert, modelliert und implementiert. Ausgehend von C4-Architekturdiagrammen, Event Storming Workshops
+            und UML-Modellen entstanden verschiedene Prototypen, die hier präsentiert werden. Jede Gruppe hat dabei ihr
+            eigenes Thema gewählt – von praktischen Campus-Tools über Informationsplattformen bis hin zu interaktiven
+            Anwendungen für Studierende. Die Website dient als zentrale Übersicht über alle Projekte und zeigt, wie aus
+            Ideen durch strukturiertes Software Engineering lauffähige Anwendungen werden.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!--/ Abstract. -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Double Content -->
+    <div class="columns is-centered">
+      <!-- Infra -->
+      <div class="column">
+        <div class="content has-text-justified">
+          <img src="./src/imgs/placeholder_icon.png" alt="Group Logo">
+        </div>
+      </div>
+      <!--/ Infra -->
+      <!-- Stereo -->
+      <div class="column">
+        <div class="content has-text-centered">
+          <h4 class="title is-4">DHBW360 GeoGuessr</h4>
+          <div class="is-size-8 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/">Leonie</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/">Lisa</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/">Daniel</a>
+            </span>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+              et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+              consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+              sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+              no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+              eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+              Lorem ipsum dolor sit amet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container is-max-desktop">
+    <!-- Double Content -->
+    <div class="columns is-centered">
+      <!-- Infra -->
+      <!--/ Infra -->
+      <!-- Stereo -->
+      <div class="column">
+        <div class="content has-text-centered">
+          <h4 class="title is-4">DHBWGames Wordle</h4>
+          <div class="is-size-8 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/">Quin Wen</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/">Xin Tian</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/">Laura</a>
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/">Emily</a>
+            </span>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+              et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+              consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+              sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+              no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+              eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+              Lorem ipsum dolor sit amet.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content has-text-justified">
+          <img src="./src/imgs/placeholder_icon.png" alt="Group Logo">
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="container is-max-desktop">
+    <!-- Double Content -->
+    <div class="columns is-centered">
+      <!-- Infra -->
+      <div class="column">
+        <div class="content has-text-justified">
+          <img src="./src/imgs/placeholder_icon.png" alt="Group Logo">
+        </div>
+      </div>
+      <!--/ Infra -->
+      <!-- Stereo -->
+      <div class="column">
+        <div class="content has-text-centered">
+          <h4 class="title is-4">Die Frankies Ticketsystem</h4>
+          <div class="is-size-8 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/">Felix</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/">Jamin</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/">Lukas</a>
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/">Luka</a>
+            </span>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+              et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+              consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+              sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+              no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+              eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+              Lorem ipsum dolor sit amet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container is-max-desktop">
+    <!-- Double Content -->
+    <div class="columns is-centered">
+      <!-- Infra -->
+      <!--/ Infra -->
+      <!-- Stereo -->
+      <div class="column">
+        <div class="content has-text-centered">
+          <h4 class="title is-4">Lost & Found</h4>
+          <div class="is-size-8 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/">Tom</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/">Merlin</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/">Moritz</a>
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/">Daniel</a>
+            </span>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+              et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+              consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+              sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+              no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+              eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+              Lorem ipsum dolor sit amet.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content has-text-justified">
+          <img src="./src/imgs/placeholder_icon.png" alt="Group Logo">
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="container is-max-desktop">
+    <!-- Double Content -->
+    <div class="columns is-centered">
+      <!-- Infra -->
+      <div class="column">
+        <div class="content has-text-justified">
+          <img src="./src/imgs/placeholder_icon.png" alt="Group Logo">
+        </div>
+      </div>
+      <!--/ Infra -->
+      <!-- Stereo -->
+      <div class="column">
+        <div class="content has-text-centered">
+          <h4 class="title is-4">Altklausursammlung</h4>
+          <div class="is-size-8 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/">Nicolai</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/">Fabian</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/">Daniel</a>
+            </span>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+              et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+              consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+              sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+              no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+              eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+              Lorem ipsum dolor sit amet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container is-max-desktop">
+    <!-- Double Content -->
+    <div class="columns is-centered">
+      <!-- Infra -->
+      <!--/ Infra -->
+      <!-- Stereo -->
+      <div class="column">
+        <div class="content has-text-centered">
+          <h4 class="title is-4">FAQ Chatbot</h4>
+          <div class="is-size-8 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/">Noah</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/">Felix</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/">Ramesh</a>
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/">Julius</a>
+            </span>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+              et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+              consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+              sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+              no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+              eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+              Lorem ipsum dolor sit amet.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content has-text-justified">
+          <img src="./src/imgs/placeholder_icon.png" alt="Group Logo">
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="container is-max-desktop">
+    <!-- Double Content -->
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-justified">
+          <img src="./src/imgs/placeholder_icon.png" alt="Group Logo">
+        </div>
+      </div>
+      <div class="column">
+        <div class="content has-text-centered">
+          <h4 class="title is-4">ÖPNV Planner</h4>
+          <div class="is-size-8 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/">Franca</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/">Hebba</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/">Isabella</a>
+            </span>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+              et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+              consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+              sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+              no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+              sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+              eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+              Lorem ipsum dolor sit amet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The template is borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</footer>
+
+</body>
+</html>

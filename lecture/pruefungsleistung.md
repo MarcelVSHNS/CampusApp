@@ -30,3 +30,6 @@ Hierfür muss das Team **eine klare Aufteilung der Verantwortlichkeiten** (z. B.
 | **4. Teamarbeit & Kommunikation**       | Organisation, Rollen, Zusammenarbeit, Präsentation    | **10 %**   | - Wie gut funktionierte die Teamarbeit?<br>- Wurde Arbeit aufgeteilt und abgestimmt?<br>- Wie ist die gemeinsame Präsentation des Projekts?<br>- Sind Verantwortlichkeiten dokumentiert? |
 | **5. Dokumentation & Reflexion**        | Technische & fachliche Nachvollziehbarkeit            | **20 %**   | - Gibt es eine saubere README / Confluence-Seite?<br>- Architekturdiagramme (z. B. C4 oder UML)?<br>- Beschreibung der API-Schnittstellen?<br>- Reflexion über Herausforderungen und Learnings? |
 | **6. Projektumfang & Schwierigkeitsgrad** | Realistischer, aber ambitionierter Umfang des Projekts | **15 %**   | - Komplexität der gewählten Aufgabe (z. B. API-Integration, Authentifizierung, Datenmodellierung)<br>- Eigenständigkeit und Innovationsgrad<br>- Angemessenes Verhältnis von Aufwand zu Qualität |
+
+## ⏰ Abgabetermin
+24.12.2025, 12:00 Uhr (GMT+1)

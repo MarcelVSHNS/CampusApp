@@ -1,24 +1,20 @@
-name: Build PlantUML diagrams
+name: Update PlantUML diagrams
 
 on:
   push:
-    branches:
-      - main
     paths:
-      - "docs/diagrams/**"
-      - ".github/workflows/plantuml.yml"
+      - "docs/**/*.puml"
 
-  pull_request:
-    paths:
-      - "docs/diagrams/**"
+permissions:
+  contents: write
 
 jobs:
-  diagrams:
+  plantuml:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Install Java and Graphviz
         run: |
@@ -29,16 +25,16 @@ jobs:
         run: |
           wget https://github.com/plantuml/plantuml/releases/latest/download/plantuml.jar
 
-      - name: Check PlantUML syntax
-        run: |
-          java -jar plantuml.jar --check-syntax docs/diagrams
-
       - name: Generate SVG diagrams
         run: |
-          java -jar plantuml.jar --svg "docs/diagrams/*.puml"
+          find docs -name "*.puml" -print0 | \
+          xargs -0 java -jar plantuml.jar -tsvg
 
-      - name: Upload diagrams
-        uses: actions/upload-artifact@v4
-        with:
-          name: uml-diagrams
-          path: docs/diagrams/*.svg
+      - name: Commit updated diagrams
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add docs/**/*.svg
+          git diff --cached --quiet || git commit -m "Update PlantUML diagrams"
+          git push

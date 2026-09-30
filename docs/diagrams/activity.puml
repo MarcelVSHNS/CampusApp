@@ -1,0 +1,22 @@
+@startuml
+
+start
+
+:Telemetriedaten empfangen;
+
+if (Gerät bekannt?) then (ja)
+    :Messwerte speichern;
+
+    if (Batteriespannung kritisch?) then (ja)
+        :Warnung erzeugen;
+    else (nein)
+        :Status aktualisieren;
+    endif
+
+else (nein)
+    :Datensatz ablehnen;
+endif
+
+stop
+
+@enduml

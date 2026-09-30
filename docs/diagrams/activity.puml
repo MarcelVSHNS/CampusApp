@@ -4,7 +4,7 @@ start
 
 :Telemetriedaten empfangen;
 
-if (Gerät bekannt?) then (ja)
+if (Gerät ist bekannt?) then (ja)
     :Messwerte speichern;
 
     if (Batteriespannung kritisch?) then (ja)

@@ -1,26 +1,44 @@
-name: Generate PlantUML Diagrams
+name: Build PlantUML diagrams
 
 on:
   push:
+    branches:
+      - main
     paths:
-      - 'docs/architecture/**/*.puml'
-  workflow_dispatch:
+      - "docs/diagrams/**"
+      - ".github/workflows/plantuml.yml"
+
+  pull_request:
+    paths:
+      - "docs/diagrams/**"
 
 jobs:
-  generate_plantuml:
+  diagrams:
     runs-on: ubuntu-latest
-    name: Render C4 PlantUML
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
+        uses: actions/checkout@v6
 
-      - name: Render PlantUML to SVG
-        id: plantuml
-        uses: grassedge/generate-plantuml-action@v1.5
+      - name: Install Java and Graphviz
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y default-jre graphviz
+
+      - name: Download PlantUML
+        run: |
+          wget https://github.com/plantuml/plantuml/releases/latest/download/plantuml.jar
+
+      - name: Check PlantUML syntax
+        run: |
+          java -jar plantuml.jar --check-syntax docs/diagrams
+
+      - name: Generate SVG diagrams
+        run: |
+          java -jar plantuml.jar --svg "docs/diagrams/*.puml"
+
+      - name: Upload diagrams
+        uses: actions/upload-artifact@v4
         with:
-          path: docs/diagrams
-          message: "Render PlantUML files"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: uml-diagrams
+          path: docs/diagrams/*.svg

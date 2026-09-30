@@ -1,0 +1,22 @@
+@startuml
+left to right direction
+
+actor Benutzer
+actor Administrator
+
+rectangle "Mobile Device Monitoring System" {
+    usecase "Geräte anzeigen" as UC1
+    usecase "Messdaten anzeigen" as UC2
+    usecase "Gerät registrieren" as UC3
+    usecase "Alarm konfigurieren" as UC4
+}
+
+Benutzer --> UC1
+Benutzer --> UC2
+
+Administrator --> UC1
+Administrator --> UC2
+Administrator --> UC3
+Administrator --> UC4
+
+@enduml
